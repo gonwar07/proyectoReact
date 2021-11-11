@@ -1,10 +1,14 @@
+import './NavBar.scss'
 
-const NavBar = () => {
+const NavBar = ({ children }) => {
 
     return(
     
     <header className="header">
         <nav className="menu">
+
+            {children}
+            
             <li><a href="#">Inicio</a></li>
             <li><a href="#">Productos</a></li>
             <li><a href="#">Sucursales</a></li>
