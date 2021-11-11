@@ -1,0 +1,41 @@
+.contenedorCardProd{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+    width: 25vw;
+    margin-top: 10vh;
+    background-color: #ffffffc4;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 20% 0% 20% 0%;
+    .nombreProd{
+        color: #000000c2;
+        font-size: 1.5rem;
+    }
+    .divContadorProd{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 50%;
+        margin-top: 3vh;
+        .btnRestaProd, .btnSumaProd{
+            width: 3vw;
+            height: 5vh;
+            font-size: 1.2rem;
+            box-shadow: 2px 2px 5px black;
+        }
+        .numProd{
+            font-weight: bold;
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: black;
+        }
+    }
+    .btnAgregarProd{
+        margin-top: 5vh;
+        width: 20vw;
+        height: 6vh;
+        box-shadow: 2px 2px 5px black;
+    }
+}

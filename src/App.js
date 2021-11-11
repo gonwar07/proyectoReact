@@ -5,6 +5,7 @@ import ItemListContainer from './components/Container/ItemListContainer';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faUserAstronaut, faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { ItemCount } from './components/ItemCount/ItemCount';
 
 library.add(fab, faUserAstronaut, faCoffee)
 
@@ -16,7 +17,9 @@ function App() {
         <CartWidget/>
       </NavBar>
 
-      <ItemListContainer greeting="BIENVENIDO/A A NUESTRA TIENDA ONLINE" usuario="Elegí tu producto y agregalo al carrito!"/>
+      <ItemListContainer greeting="BIENVENIDO/A A NUESTRA TIENDA ONLINE" usuario="Elegí tu producto y agregalo al carrito!">
+        <ItemCount/>
+      </ItemListContainer>
     </>
   );
 }

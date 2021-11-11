@@ -1,39 +1,27 @@
 .header{
-    background-image: linear-gradient(#2a2121b5, #ffffff);
-    height: 15vh;
+    background-image: linear-gradient(88deg, #000000, #000000cf);
+    height: 20vh;
     .menu{
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
         list-style: none;
-        padding-top: 5.5vh;
+        padding-top: 7.5vh;
         .logo{
             font-size: 3.5rem;
-            color: black;
+            color: #ffff;
             margin-left: -6vw;
+            margin-top: -2vh;
         }
         a{
             text-decoration: none;
-            color: rgb(0 0 0 / 67%);
+            color: #ffffffbf;
             font-weight: bolder;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
           }
-      }
-  }
-
-  .divContainer{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      align-items: center;
-      margin-top: 10vh;
-      h2{
-          font-size: 3rem;
-      }
-      p{
-          font-size: 1.5rem;
-          margin-top: 4vh;
+          a:hover{
+              color: #50efad;
+          }
       }
   }
