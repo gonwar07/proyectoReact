@@ -3,7 +3,7 @@ import './ItemCount.scss'
 
 export const ItemCount = () => {
 
-    const [clicks, setClicks] = useState(0)
+    const [clicks, setClicks] = useState(1)
     const stock = 10
 
     const sumarProd = () => {
@@ -15,8 +15,8 @@ export const ItemCount = () => {
     }
 
     const restarProd = () => {
-        if(clicks <= 0){
-            console.log('0 es el mínimo de productos permitidos')
+        if(clicks <= 1){
+            console.log('1 es el mínimo de productos permitidos')
         }else{
             setClicks(clicks - 1)
         }
@@ -33,13 +33,12 @@ export const ItemCount = () => {
 
     return(
         <div className="contenedorCardProd">
-            <h3 className="nombreProd">Producto</h3>
             <div className="divContadorProd">
-                <button className="btnRestaProd" onClick={restarProd}>-</button>
+                <button className="btnRestaProd btn btn-dark" onClick={restarProd}>-</button>
                 <p className="numProd"> {clicks} </p>
-                <button className="btnSumaProd" onClick={sumarProd}>+</button>
+                <button className="btnSumaProd btn btn-dark" onClick={sumarProd}>+</button>
             </div>
-            <button className="btnAgregarProd" onClick={agregaProd}>Agregar al carrito</button>
+            <button className="btnAgregarProd btn btn-dark" onClick={agregaProd}>Agregar al carrito</button>
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { CartWidget } from './components/NavBar/CartWidget';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/Container/ItemListContainer';

@@ -4,7 +4,7 @@ const NavBar = ({ children }) => {
 
     return(
     
-    <header className="header">
+    <header className="header bg-dark">
         <nav className="menu">
 
             {children}
