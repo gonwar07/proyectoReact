@@ -1,44 +1,19 @@
-export const stock = [
-    {
-        id: 1,
-        price: 5000,
-        name: 'Producto 1',
-        desc: 'Lorem ipsum',
-        img: 'https://via.placeholder.com/220'
-    },
-    {
-        id: 2,
-        price: 3500,
-        name: 'Producto 2',
-        desc: 'Lorem ipsum',
-        img: 'https://via.placeholder.com/220'
-    },
-    {
-        id: 3,
-        price: 15000,
-        name: 'Producto 3',
-        desc: 'Lorem ipsum',
-        img: 'https://via.placeholder.com/220'
-    },
-    {
-        id: 4,
-        price: 4200,
-        name: 'Producto 4',
-        desc: 'Lorem ipsum',
-        img: 'https://via.placeholder.com/220'
-    },
-    {
-        id: 5,
-        price: 7000,
-        name: 'Producto 5',
-        desc: 'Lorem ipsum',
-        img: 'https://via.placeholder.com/220'
-    },
-    {
-        id: 6,
-        price: 6500,
-        name: 'Producto 6',
-        desc: 'Lorem ipsum',
-        img: 'https://via.placeholder.com/220'
-    }
-]
+import React from 'react'
+import { Card } from 'react-bootstrap'
+import { ItemCount } from '../ItemCount/ItemCount'
+
+export const Item = ({prod}) =>{
+
+    return(
+
+        <Card className="col-6 tarjetaProd" style={{ width: '18rem' }}>
+            <Card.Img className="prodImg" variant="top" src={prod.img} />
+            <Card.Body>
+                <Card.Title className="prodName">{prod.name}</Card.Title>
+                <p className="prodPrice">Precio $. {prod.price}</p>
+                <Card.Text className="prodDesc">{prod.desc}</Card.Text>
+                <ItemCount />
+            </Card.Body>
+        </Card>
+    )
+}
