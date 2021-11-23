@@ -1,4 +1,5 @@
 import './NavBar.scss'
+import { Link } from 'react-router-dom'
 
 const NavBar = ({ children }) => {
 
@@ -7,12 +8,12 @@ const NavBar = ({ children }) => {
     <header className="header bg-dark">
         <nav className="menu">
 
-            {children}
+            <Link to="/">{children}</Link>
             
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Productos</a></li>
-            <li><a href="#">Sucursales</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><Link to="/">Inicio</Link></li>
+            <li><Link to="productos">Productos</Link></li>
+            <li><Link to="cart">Carrito</Link></li>
+            <li><Link to="contacto">Contacto</Link></li>
         </nav>
     </header>)
 

@@ -11,7 +11,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        width: 50%;
+        width: 18vw;
         margin-top: 3vh;
         .btnRestaProd, .btnSumaProd{
             width: 3vw;
@@ -32,7 +32,7 @@
     .btnAgregarProd{
         margin-top: 1vh;
         width: 15vw;
-        height: 6vh;
+        height: 10vh;
         box-shadow: 2px 2px 5px black;
     }
 }

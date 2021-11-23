@@ -1,18 +1,22 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { ItemCount } from '../ItemCount/ItemCount'
+import './Item.scss'
 
 export const Item = ({prod}) =>{
 
     return(
 
-        <Card className="col-6 tarjetaProd" style={{ width: '18rem' }}>
-            <Card.Img className="prodImg" variant="top" src={prod.img} />
-            <Card.Body>
+        <Card key={prod.id} className="col-6 tarjetaProd" style={{ width: '18rem' }}>
+            <img src={prod.img} className="prodImg" variant="top" alt={prod.name}/>
+            <Card.Body className="cardBody">
                 <Card.Title className="prodName">{prod.name}</Card.Title>
                 <p className="prodPrice">Precio $. {prod.price}</p>
                 <Card.Text className="prodDesc">{prod.desc}</Card.Text>
-                <ItemCount />
+                <p className="prodCat">{prod.category}</p>
+                <Link to={`/detail/${prod.id}`} className="btn btn-primary">Ver más</Link>
+                <ItemCount/>
             </Card.Body>
         </Card>
     )

@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import './ItemCount.scss'
+import { useNavigate } from 'react-router'
 
 export const ItemCount = () => {
 
     const [clicks, setClicks] = useState(1)
     const stock = 10
+
+    const navigate = useNavigate()
 
     const sumarProd = () => {
         if(clicks >= stock){
@@ -23,11 +26,12 @@ export const ItemCount = () => {
     }
 
     const agregaProd = () => {
-        if(clicks == 0){
+        if(clicks === 0){
             alert('Debes indicar la catidad de productos deseada')
         }else{
             alert('Has agregado tus productos al carrito!')
-                window.location.reload(true);
+                // window.location.reload(true);
+                navigate('/')
         }
     }
 
