@@ -1,48 +1,24 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './ItemCount.scss'
-import { useNavigate } from 'react-router'
 
-export const ItemCount = () => {
-
-    const [clicks, setClicks] = useState(1)
-    const stock = 10
-
-    const navigate = useNavigate()
+export const ItemCount = ( {max, setCantidad, cantidad, onAdd} ) => {
 
     const sumarProd = () => {
-        if(clicks >= stock){
-            console.log('No hay stock del producto seleccionado')
-        }else{
-            setClicks(clicks + 1)
-        }
+        cantidad < max && setCantidad(cantidad + 1)
     }
 
     const restarProd = () => {
-        if(clicks <= 1){
-            console.log('1 es el mínimo de productos permitidos')
-        }else{
-            setClicks(clicks - 1)
-        }
-    }
-
-    const agregaProd = () => {
-        if(clicks === 0){
-            alert('Debes indicar la catidad de productos deseada')
-        }else{
-            alert('Has agregado tus productos al carrito!')
-                // window.location.reload(true);
-                navigate('/')
-        }
+        cantidad > 1 && setCantidad(cantidad - 1)
     }
 
     return(
         <div className="contenedorCardProd">
             <div className="divContadorProd">
                 <button className="btnRestaProd btn btn-dark" onClick={restarProd}>-</button>
-                <p className="numProd"> {clicks} </p>
+                <p className="numProd"> {cantidad} </p>
                 <button className="btnSumaProd btn btn-dark" onClick={sumarProd}>+</button>
             </div>
-            <button className="btnAgregarProd btn btn-dark" onClick={agregaProd}>Agregar al carrito</button>
+            <button className="btnAgregarProd btn btn-dark" onClick={onAdd}>Agregar al carrito</button>
         </div>
     )
 }

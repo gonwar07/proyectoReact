@@ -8,6 +8,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faUserAstronaut, faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import { Carrito } from './components/Carrito/Carrito'
 
 library.add(fab, faUserAstronaut, faCoffee)
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={ <ItemListContainer/> }/>
         <Route path="/productos/:catId" element={ <ItemListContainer/> }/>
         <Route path="/detail/:itemId" element={ <ItemDetailContainer/> }/>
+        <Route path="/cart" element={ <Carrito/>}/>
         <Route path="*" element={ <Navigate to="/"/>}/>
       </Routes>
     </BrowserRouter>  

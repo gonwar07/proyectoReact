@@ -16,7 +16,6 @@ export const Item = ({prod}) =>{
                 <Card.Text className="prodDesc">{prod.desc}</Card.Text>
                 <p className="prodCat">{prod.category}</p>
                 <Link to={`/detail/${prod.id}`} className="btn btn-primary">Ver más</Link>
-                <ItemCount/>
             </Card.Body>
         </Card>
     )
