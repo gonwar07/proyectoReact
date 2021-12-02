@@ -10,60 +10,28 @@ import { faUserAstronaut, faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import { Carrito } from './components/Carrito/Carrito'
-import { CartContext } from './context/CartContext'
+import { CartProvider } from './context/CartContext'
 
 library.add(fab, faUserAstronaut, faCoffee)
 
 function App() {
 
-  const [carrito, setCarrito] = useState([])
-  console.log(carrito)
-
-  const agregarAlCarrito = (item) => {
-    setCarrito( [...carrito, item] )
-  }
-
-  const removerDelCarrito = (id) =>{
-    setCarrito( carrito.filter(prod => prod.id !== id))
-  }
-
-  const vaciarCarrito = () =>{
-    setCarrito([])
-  }
-
-  const isInCart = (id) =>{
-    return carrito.some( prod => prod.id === id)
-  }
-
-  const totalCantidad = () =>{
-    return carrito.reduce((acc, prod) => acc + prod.cantidad, 0)
-  }
-
   return (
-    <CartContext.Provider value={{
-      carrito,
-      agregarAlCarrito,
-      removerDelCarrito,
-      vaciarCarrito,
-      isInCart,
-      totalCantidad
-    }}>
-
-    <BrowserRouter>   
-      <NavBar>
-        <CartWidget/>
-      </NavBar>
-  
-      <Routes>
-        <Route path="/" element={ <ItemListContainer/> }/>
-        <Route path="/productos/:catId" element={ <ItemListContainer/> }/>
-        <Route path="/detail/:itemId" element={ <ItemDetailContainer/> }/>
-        <Route path="/cart" element={ <Carrito/>}/>
-        <Route path="*" element={ <Navigate to="/"/>}/>
-      </Routes>
-    </BrowserRouter>
-
-    </CartContext.Provider>
+    <CartProvider>
+      <BrowserRouter>   
+        <NavBar>
+          <CartWidget/>
+        </NavBar>
+    
+        <Routes>
+          <Route path="/" element={ <ItemListContainer/> }/>
+          <Route path="/productos/:catId" element={ <ItemListContainer/> }/>
+          <Route path="/detail/:itemId" element={ <ItemDetailContainer/> }/>
+          <Route path="/cart" element={ <Carrito/>}/>
+          <Route path="*" element={ <Navigate to="/"/>}/>
+        </Routes>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
