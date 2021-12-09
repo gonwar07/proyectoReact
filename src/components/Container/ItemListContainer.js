@@ -3,6 +3,7 @@ import {ItemList} from '../ItemList/ItemList'
 import { pedirDatos } from '../../helpers/pedirDatos'
 import './ItemListContainer.scss'
 import { useParams } from 'react-router'
+import { Loader } from '../Loader/Loader'
 
 export const ItemListContainer = ({greeting, usuario}) => {
 
@@ -39,8 +40,8 @@ export const ItemListContainer = ({greeting, usuario}) => {
             <p>{usuario}</p>
             <>
                 {
-                loading 
-                    ? <h2>Cargando...</h2>
+                    loading
+                    ? <Loader/>
                     : <ItemList productos ={productos}/>
                 }
             </>

@@ -1,11 +1,11 @@
-.contenedorDetalle{
-    background-color: red;
-    .tarjetaProd{
-        .card-body{
-            .btnVolver, .btnVolverInicio{
-                margin-top: 3vh;
-                width: auto;
-            }
+.tarjetaProd{
+     .cardBody{
+        .btnVolver, .btnVolverInicio{
+            width: auto;
+            margin-bottom: 3vh;
+        }
+        .btnTerminarCompra{
+            margin-bottom: 3vh;
         }
     }
 }

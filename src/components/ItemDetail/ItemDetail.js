@@ -36,7 +36,7 @@ export const ItemDetail = ({id, name, price, img, desc, category, stock}) =>{
     return(
             <Card key={id} className="col-6 tarjetaProd" style={{ width: '18rem' }}>
                 <img src={img} className="prodImg" variant="top" alt={name}/>
-                <Card.Body>
+                <Card.Body className="cardBody">
                     <Card.Title className="prodName">{name}</Card.Title>
                     <p className="prodPrice">Precio $. {price}</p>
                     <Card.Text className="prodDesc">{desc}</Card.Text>
@@ -50,7 +50,7 @@ export const ItemDetail = ({id, name, price, img, desc, category, stock}) =>{
                             setCantidad={setCantidad}
                             onAdd={handleAgregar}
                         />
-                    : <Link to="/cart" className="btn btn-success">Terminar mi compra</Link>
+                    : <Link to="/cart" className="btn btn-success btnTerminarCompra">Terminar mi compra</Link>
                 }
 
                     <button className="btnVolver btn btn-dark" onClick={handleVolver}>Volver</button>
