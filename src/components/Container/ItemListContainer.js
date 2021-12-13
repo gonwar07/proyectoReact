@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import {ItemList} from '../ItemList/ItemList'
-import { pedirDatos } from '../../helpers/pedirDatos'
 import './ItemListContainer.scss'
 import { useParams } from 'react-router'
 import { Loader } from '../Loader/Loader'
+import { collection, getDocs, query, where} from 'firebase/firestore/lite'
+import { db } from '../../firebase/config'
 
 export const ItemListContainer = ({greeting, usuario}) => {
 
@@ -11,26 +12,33 @@ export const ItemListContainer = ({greeting, usuario}) => {
     const [productos, setProductos] = useState([])
 
     const { catId } = useParams()
+
     console.log(catId)
 
     useEffect(() => {
-
         setLoading(true)
-        pedirDatos()
-            .then((resp) => {
 
-                if (!catId) {
-                    setProductos(resp)
-                } else{
-                    setProductos(resp.filter(prod => prod.category === catId))
-                }
-            })
-            .catch((error) => {
-                console.log(error)
+        //1.- armar la referencia
+        const productosRef = collection(db, 'productos')
+
+        const q = catId ? query(productosRef, where('category', '==', catId)) : productosRef
+
+        //2.- GET a esa ref
+        getDocs(q)
+            .then((collection) =>{
+                const productos = collection.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }))
+                console.log(productos)
+
+                setProductos(productos)
             })
             .finally(() => {
                 setLoading(false)
             })
+
+
     }, [catId])
 
 
