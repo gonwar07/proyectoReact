@@ -1,4 +1,4 @@
-import REACT, {useContext} from 'react'
+import {useContext} from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 import { CartItem } from './CartItem'
@@ -6,7 +6,7 @@ import './CartView.scss'
 
 export const CartView = () =>{
 
-    const {carrito, vaciarCarrito} = useContext(CartContext)
+    const {carrito, vaciarCarrito, totalCompra} = useContext(CartContext)
 
     if(carrito.length === 0){
         return (
@@ -29,8 +29,9 @@ export const CartView = () =>{
                 </section>
                 <hr/>
                 <div>
+                    <p>Total: $ {totalCompra()}</p>
                     <button className="btn btn-danger" onClick={vaciarCarrito}>Vaciar carrito</button>
-                    <button className="btn btn-success mx-2">Terminar mi compra</button>
+                    <Link to="/checkout" className="btn btn-success mx-2">Terminar mi compra</Link>
                 </div>
         </div>
     )

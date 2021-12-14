@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { ItemCount } from '../ItemCount/ItemCount'
 import './Item.scss'
 
 export const Item = ({prod}) =>{
