@@ -6,7 +6,7 @@ import { Loader } from '../Loader/Loader'
 import { collection, getDocs, query, where} from 'firebase/firestore/lite'
 import { db } from '../../firebase/config'
 
-export const ItemListContainer = ({greeting, usuario}) => {
+export const ItemListContainer = () => {
 
     const [loading, setLoading] = useState(false)
     const [productos, setProductos] = useState([])
@@ -44,8 +44,7 @@ export const ItemListContainer = ({greeting, usuario}) => {
 
     return(
         <div className="divContainer">
-            <h2>{greeting}</h2>
-            <p>{usuario}</p>
+            <h2>PRODUCTOS</h2>
             <>
                 {
                     loading

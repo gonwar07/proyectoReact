@@ -13,7 +13,6 @@ export const Item = ({prod}) =>{
                 <Card.Title className="prodName">{prod.name}</Card.Title>
                 <p className="prodPrice">Precio $. {prod.price}</p>
                 <Card.Text className="prodDesc">{prod.desc}</Card.Text>
-                <p className="prodCat">{prod.category}</p>
                 <Link to={`/detail/${prod.id}`} className="btn btn-primary">Ver más</Link>
             </Card.Body>
         </Card>

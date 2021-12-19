@@ -29,7 +29,7 @@ export const CartView = () =>{
                 </section>
                 <hr/>
                 <div>
-                    <p>Total: $ {totalCompra()}</p>
+                    <p className='totalCompra'>TOTAL: $ {totalCompra()}</p>
                     <button className="btn btn-danger" onClick={vaciarCarrito}>Vaciar carrito</button>
                     <Link to="/checkout" className="btn btn-success mx-2">Terminar mi compra</Link>
                 </div>
